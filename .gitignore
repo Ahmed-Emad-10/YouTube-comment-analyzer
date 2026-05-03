@@ -1,0 +1,45 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Output files
+output/
+
+# Model cache
+.cache/
+*.pt
+*.pkl
+*.bin
+
+# BERTopic / HuggingFace cache
+models/
+hub/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+#videos
+*.mp4
+
+
+#notebooks
+*.ipynb

@@ -1,0 +1,121 @@
+topic_labeling_task:
+  description: >
+    You are given a lists of keywords extracted from YouTube comments via topic modeling.
+    Each topic contains a set of keywords and the number of comments associated with it.
+
+    Raw keyword data:
+    {keywords_data} and {comment_counts}
+
+
+    Your job is to:
+    1. Read the keywords for each topic carefully.
+    2. Generate a short, human-readable label (3-6 words) that best captures what
+       that topic is about.
+    3. Report the number of comments associated with each topic alongside its label.
+    4. Order topics from most discussed to least discussed.
+  expected_output: >
+    A structured list of labeled topics in this exact format:
+
+    Topic 1: <Human-Readable Label> — <N> comments
+      Keywords: keyword1, keyword2, keyword3, ...
+
+    Topic 2: <Human-Readable Label> — <N> comments
+      Keywords: keyword1, keyword2, keyword3, ...
+
+    (continue for all topics)
+
+topic_insights_task:
+  description: >
+    You are given a list of positive comments from a YouTube video.
+
+    Positive comments:
+    {positive_comments}
+
+    Your job is to:
+    1. Read through all the positive comments carefully.
+    2. Identify the recurring themes, specific praises, and emotional drivers
+       that make viewers leave positive feedback.
+    3. Group your findings into clear insight categories.
+    4. For each insight, briefly explain the pattern you observed and support it
+       with 1-2 representative examples from the comments.
+  expected_output: >
+    A structured list of insights in this format:
+
+    Insight 1: <Insight Title>
+      Explanation: <What pattern drives this positive sentiment>
+      Example comments:
+        - "<example comment 1>"
+        - "<example comment 2>"
+
+    Insight 2: <Insight Title>
+      ...
+
+    (continue for all identified insights)
+
+complaint_detection_task:
+  description: >
+    You are given a list of negative comments from a YouTube video.
+
+    Negative comments:
+    {negative_comments}
+
+    Your job is to:
+    1. Read through all the negative comments carefully.
+    2. Identify recurring complaints, frustrations, and issues raised by viewers.
+    3. Group similar complaints into complaint categories.
+    4. For each category, explain the core issue and support it with 1-2 representative
+       examples from the comments.
+    5. Ignore isolated rants or offensive comments with no constructive signal.
+  expected_output: >
+    A structured list of complaints in this format:
+
+    Complaint 1: <Complaint Category Title>
+      Core Issue: <What viewers are frustrated about>
+      Example comments:
+        - "<example comment 1>"
+        - "<example comment 2>"
+
+    Complaint 2: <Complaint Category Title>
+      ...
+
+    (continue for all identified complaint categories)
+
+report_writing_task:
+  description: >
+    You are the final agent in a YouTube comment analysis pipeline. You have received
+    the following inputs from previous analysis agents:
+
+    --- TOPIC ANALYSIS ---
+    {topic_labels}
+
+    --- POSITIVE INSIGHTS ---
+    {insights}
+
+    --- DETECTED COMPLAINTS ---
+    {complaints}
+
+
+    Your job is to synthesize all of this into one cohesive, professional report
+    that gives a complete picture of audience sentiment for this YouTube video.
+    The report should flow naturally from section to section and end with
+    a brief set of actionable recommendations based on the findings.
+  expected_output: >
+    A full structured report with the following sections:
+
+    # YouTube Comment Analysis Report
+    ## Video: <video title or URL>
+
+    ## 1. Overview
+    <Brief summary of total comments analyzed, sentiment breakdown, and number of topics>
+
+    ## 2. Topic Breakdown
+    <Labeled topics with comment counts, from most to least discussed>
+
+    ## 3. What Viewers Love (Positive Insights)
+    <Synthesized insights from positive comments>
+
+    ## 4. Viewer Complaints & Issues
+    <Synthesized complaints from negative comments>
+
+    ## 5. Recommendations
+    <3-5 actionable recommendations based on the full analysis>
