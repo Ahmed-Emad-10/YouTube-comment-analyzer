@@ -1,0 +1,6 @@
+crewai[tools]
+transformers
+torch
+pandas
+streamlit
+bertopic
